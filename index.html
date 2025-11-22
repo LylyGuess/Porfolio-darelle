@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darelle Nkouankam | Ingénieure Procédés & WASH</title>
+    <style>
+        /* --- CONFIGURATION GLOBALE --- */
+        :root {
+            --primary-color: #023e8a; /* Bleu profond professionnel */
+            --secondary-color: #0096c7; /* Bleu eau clair */
+            --accent-color: #48cae4; /* Cyan pour les détails */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-light: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--secondary-color); }
+
+        /* --- HERO SECTION (ACCUEIL) --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(0, 150, 199, 0.8)), url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover { background: var(--primary-color); }
+
+        /* --- SECTION A PROPOS --- */
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .about-text {
+            flex: 1.5;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* --- COMPETENCES / SERVICES --- */
+        .services {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-bottom: 1rem; color: var(--primary-color); }
+        .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+        /* --- PORTFOLIO / PROJETS --- */
+        .portfolio {
+            padding: 5rem 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-content { padding: 1.5rem; }
+        .tag {
+            background: #e1f5fe;
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact a {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Menu simplifié pour l'exemple */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">D. NKOUANKAM</div>
+            <div class="nav-links">
+                <a href="#about">À Propos</a>
+                <a href="#services">Expertises</a>
+                <a href="#portfolio">Projets</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ingénierie des Procédés & Solutions Eau (WASH)</h1>
+            <p>Je conçois des systèmes de traitement durables pour l'industrie et les communautés en Afrique. Spécialiste en optimisation des STEP et réseaux d'eau potable.</p>
+            <a href="#contact" class="btn">Discuter de votre projet</a>
+        </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section id="about" class="about">
+        <div class="about-img">
+            <!-- Tu devras mettre ta vraie photo ici plus tard -->
+            <img src="https://via.placeholder.com/400x500?text=Photo+de+Darelle" alt="Darelle Manuela Nkouankam">
+        </div>
+        <div class="about-text">
+            <h2>À Propos de moi</h2>
+            <p>Ingénieure diplômée de l'ENSMIP (Promo 2025), je possède une double compétence rare : la rigueur des procédés industriels (Oil & Gas, Agroalimentaire) et l'expertise du traitement de l'eau.</p>
+            <br>
+            <p>Mon objectif est clair : <strong>Apporter des solutions techniques robustes aux défis de l'eau en Afrique.</strong></p>
+            <br>
+            <p>Que ce soit pour dimensionner une station d'épuration industrielle ou concevoir un réseau d'eau potable rural, je combine analyse de terrain et simulation numérique (EPANET, DWSIM).</p>
+            <br>
+            <div style="margin-top: 1rem;">
+                <span class="tag">Cameroun</span>
+                <span class="tag">Mobilité Internationale</span>
+                <span class="tag">Bilingue FR/EN (Tech)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / EXPERTISES -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Mes Domaines d'Intervention</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="card">
+                    <span class="icon">💧</span>
+                    <h3>Traitement des Eaux (WASH)</h3>
+                    <p>Conception et diagnostic de systèmes d'eau potable. Analyse qualité (pH, turbidité), dimensionnement de pompes et réseaux avec EPANET. Solutions adaptées aux zones rurales et urbaines.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="card">
+                    <span class="icon">🏭</span>
+                    <h3>Eaux Usées Industrielles</h3>
+                    <p>Gestion des effluents (SABC, Agroalimentaire). Optimisation des STEP, neutralisation (CO2/Acide), suivi DCO/DBO5 pour respecter les normes de rejet environnementales.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="card">
+                    <span class="icon">🛡️</span>
+                    <h3>QHSE & Audit Process</h3>
+                    <p>Sécurité des procédés (HAZOP, AMDEC). Mise en place de protocoles ISO 14001 et HACCP. Audit de fiabilité des équipements critiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS REALISES (Basés sur ton CV) -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Projets Récents</h2>
+            <div class="project-grid">
+                
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="tag">Agroalimentaire</span>
+                        <span class="tag">Traitement Eaux Usées</span>
+                        <h3>Neutralisation des Effluents (SABC)</h3>
+                        <p>Conception d'un système de neutralisation des effluents basiques par CO₂ biogénique. Étude de faisabilité technique et économique pour réduire l'empreinte carbone de la brasserie.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="tag">Eau Potable</span>
+                        <span class="tag">Terrain</span>
+                        <h3>Optimisation Qualité Eau (Camwater)</h3>
+                        <p>Analyse des étapes de traitement à Kaélé. Propositions concrètes pour améliorer le suivi des paramètres de qualité et sécuriser l'approvisionnement des populations.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <span class="tag">Conception</span>
+                        <span class="tag">Simulation</span>
+                        <h3>Modélisation de Procédés</h3>
+                        <p>Utilisation de DWSIM et Aspen HYSYS pour modéliser le traitement des eaux usées industrielles et analyser l'impact des variations de débit sur les performances.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>Prêt à collaborer pour une meilleure gestion de l'eau ?</h2>
+        <p style="margin: 1rem 0;">Basée à Yaoundé, disponible pour des missions au Cameroun et en Afrique.</p>
+        <p>Email : <a href="mailto:darellemanuela022@gmail.com">darellemanuela022@gmail.com</a></p>
+        <p>Tél : +237 658 426 016</p>
+        <br>
+        <a href="https://www.linkedin.com/in/darelle-manuela-nkouankam-18aa0b20a" target="_blank" class="btn" style="background: white; color: var(--primary-color);">Mon Profil LinkedIn</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Darelle Manuela Nkouankam - Ingénieure Procédés. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
